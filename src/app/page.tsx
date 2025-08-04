@@ -35,7 +35,7 @@ import InfoCard from './components/InfoCard';
 import CostSummaryCard from './components/CostSummaryCard';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Button, Grid, TextField, Typography } from '@mui/material';
-import ShippingCard from './components/shippingCard';
+import ShippingCard from './components/ShippingCard';
 
 const drawerWidth = 240;
 
