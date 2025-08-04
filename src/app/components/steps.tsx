@@ -50,7 +50,7 @@ export default function HorizontalLinearStepper() {
     const isMobile = useMediaQuery(theme.breakpoints.down('sm')); // true for <600px
 
     return (
-        <Box sx={{ width: '100%', my: 6 }}>
+        <Box sx={{ width: '100%', mb: 4 }}>
             <Stepper
                 activeStep={activeStep}
                 alternativeLabel={!isMobile} // horizontal with labels for desktop
@@ -58,7 +58,21 @@ export default function HorizontalLinearStepper() {
             >
                 {steps.map((label) => (
                     <Step key={label}>
-                        <StepLabel StepIconComponent={CustomStepIcon}>{label}</StepLabel>
+                        <StepLabel
+                            StepIconComponent={CustomStepIcon}
+                            sx={{
+                                '& .MuiStepLabel-label': {
+                                    fontFamily: 'Dubai, sans-serif',
+                                    fontWeight: 400,
+                                    fontStyle: 'normal', // 'Regular' maps to normal
+                                    fontSize: '20px',
+                                    lineHeight: '100%',
+                                    letterSpacing: '0%',
+                                }
+                            }}
+                        >
+                            {label}
+                        </StepLabel>
                     </Step>
                 ))}
             </Stepper>

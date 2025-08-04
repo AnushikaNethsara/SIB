@@ -25,7 +25,7 @@ const data = [
 
 export default function ProfileCard() {
   return (
-    <Card sx={{ mx: 'auto', p: 2, width: '100%' }}>
+    <Card sx={{ mx: 'auto', p: 2 }}>
       <CardContent>
         <Box
           sx={{
@@ -44,12 +44,8 @@ export default function ProfileCard() {
                 }}
               >
                 {/* Circle border wrapper with image inside */}
-                <Box
-                  sx={{
-                    mr: 2,
-                  }}
-                >
-                 <Image
+                <Box sx={{ mr: 2 }}>
+                  <Image
                     src={image}
                     alt={title}
                     width={48}
@@ -58,10 +54,32 @@ export default function ProfileCard() {
                   />
                 </Box>
                 <Box>
-                  <Typography variant="body2" color="text.secondary">
+                  {/* Title */}
+                  <Typography
+                    sx={{
+                      fontFamily: 'Dubai, sans-serif',
+                      fontWeight: 400,
+                      fontStyle: 'normal', // 'Regular'
+                      fontSize: '16px',
+                      lineHeight: '100%',
+                      letterSpacing: '0%',
+                      color: 'text.secondary',
+                    }}
+                  >
                     {title}
                   </Typography>
-                  <Typography variant="body2" component="div" fontWeight="bold">
+
+                  {/* Subtitle */}
+                  <Typography
+                    sx={{
+                      fontFamily: 'Dubai, sans-serif',
+                      fontWeight: 700,
+                      fontStyle: 'normal', // 'Bold'
+                      fontSize: '20px',
+                      lineHeight: '100%',
+                      letterSpacing: '0%',
+                    }}
+                  >
                     {subtitle}
                   </Typography>
                 </Box>

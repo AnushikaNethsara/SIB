@@ -32,7 +32,7 @@ import HorizontalLinearStepper from './components/steps';
 import ProfileCard from './components/profileCard';
 import InfoCard from './components/InfoCard';
 import CostSummaryCard from './components/CostSummaryCard';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { Button, TextField, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import ShippingCard from './components/ShippingCard';
@@ -309,30 +309,35 @@ export default function MiniDrawer() {
           </Box>
 
           {/* TextArea & CostSummaryCard Side by Side */}
-          <Box sx={{ width: '100%', display: 'flex', my: 5 }}>
-            {/* Left Side - TextArea (60%) */}
-            <Box sx={{ flex: 4 }}>
+          <div className="w-full my-5 grid grid-cols-1 md:grid-cols-12 gap-4">
+            {/* Left Side - TextArea (Desktop: 8/12) */}
+            <div className="md:col-span-4">
               <TextField
                 label="Add Details"
                 multiline
-                rows={6}
+                rows={5}
                 variant="outlined"
                 fullWidth
-                sx={{ backgroundColor: 'white', borderRadius: '8px', }}
+                sx={{
+                  backgroundColor: 'white',
+                  borderRadius: '8px',
+                  height: '100%',
+                }}
               />
-            </Box>
+            </div>
 
-            {/* Right Side - CostSummaryCard (40%) */}
-            <Box sx={{ flex: 6 }}>
+            {/* Right Side - CostSummaryCard (Desktop: 4/12) */}
+            <div className="md:col-span-8 flex">
               <CostSummaryCard />
-            </Box>
-          </Box>
+            </div>
+          </div>
+
 
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 2 }}>
             <Button
               variant="outlined"
-              startIcon={<ArrowBackIcon />}
-              sx={{ borderRadius: '100px' }}
+              startIcon={<ArrowBackIosIcon />}
+              sx={{ borderRadius: '100px', color: '#000' }}
             >
               Back
             </Button>
@@ -341,8 +346,6 @@ export default function MiniDrawer() {
           </Box>
         </Box>
       </Box>
-
-
     </Box>
   );
 }
