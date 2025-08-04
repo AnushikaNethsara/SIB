@@ -3,7 +3,6 @@ import * as React from 'react';
 import { styled, useTheme, Theme, CSSObject } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
@@ -34,7 +33,8 @@ import ProfileCard from './components/profileCard';
 import InfoCard from './components/InfoCard';
 import CostSummaryCard from './components/CostSummaryCard';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Button, Grid, TextField, Typography } from '@mui/material';
+import { Button, TextField, Typography } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import ShippingCard from './components/ShippingCard';
 
 const drawerWidth = 240;
@@ -298,14 +298,14 @@ export default function MiniDrawer() {
 
           {/* Info Cards Full Width */}
           <Box sx={{ width: '100%', my: 3 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} md={6}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+              <div>
                 <InfoCard />
-              </Grid>
-              <Grid item xs={12} md={6}>
+              </div>
+              <div>
                 <ShippingCard />
-              </Grid>
-            </Grid>
+              </div>
+            </div>
           </Box>
 
           {/* TextArea & CostSummaryCard Side by Side */}

@@ -39,22 +39,22 @@ export default function InfoCard() {
 
         {/* Last row: State, City, Zip */}
         <Box sx={{ pt: 1 }}>
-          <Grid container spacing={14}>
+          <div className="grid grid-cols-3 gap-14">
             {[
               { label: 'State', value: 'California' },
               { label: 'City', value: 'Los Angeles' },
               { label: 'Zip', value: '90001' }
             ].map((item) => (
-              <Grid item xs={4} key={item.label}>
+              <div key={item.label}>
                 <Typography variant="body1" fontWeight="bold">
                   {item.label}
                 </Typography>
                 <Typography variant="subtitle2" color="text.secondary">
                   {item.value}
                 </Typography>
-              </Grid>
+              </div>
             ))}
-          </Grid>
+          </div>
         </Box>
       </CardContent>
     </Card>
